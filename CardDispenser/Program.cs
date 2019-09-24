@@ -46,22 +46,22 @@ namespace CardDispenser
         [DllImport("CRT_571.dll")]
         public static extern int ICCardTransmit(IntPtr ComHandle, byte TxAddr, byte TxCmCode, byte TxPmCode, int TxDataLen, byte[] TxData, ref byte[] RxReplyType, ref byte[] RxCmCode, ref byte[] RxPmCode, ref byte[] RxStCode0, ref byte[] RxStCode1, ref byte[] RxStCode2, ref int RxDataLen, byte[] RxData);
 
-        public void ExecuteAndCheck(IntPtr _hCom, byte _CmCode, byte _PmCode, byte[] _ReData, int _ReDataLen)
-        {
-            byte[] CmData = new byte[1024];
-            byte Addr = 0x00;
-            int CmDataLen=0;
-            byte ReType = 0xFE;
-            byte St2 = 0xFE;
-            byte St1 = 0xFE;
-            byte St0 = 0xFE;
-            int rc = 0;
-            rc = ExecuteCommand(_hCom, Addr, _CmCode, _PmCode, CmDataLen, CmData,
-                    ref ReType, ref St0, ref St1, ref St2, ref _ReDataLen, _ReData);
-            Console.WriteLine($"rc:{rc}");
-            Console.WriteLine("Retype1: {0:X}", ReType);
-            Console.WriteLine("St0: {0:X}, St1: {0:X}, St2: {1:X}", St0, St1, St2);
-        }
+        //public void ExecuteAndCheck(IntPtr _hCom, byte _CmCode, byte _PmCode, byte[] _ReData, int _ReDataLen)
+        //{
+        //    byte[] CmData = new byte[1024];
+        //    byte Addr = 0x00;
+        //    int CmDataLen=0;
+        //    byte ReType = 0xFE;
+        //    byte St2 = 0xFE;
+        //    byte St1 = 0xFE;
+        //    byte St0 = 0xFE;
+        //    int rc = 0;
+        //    rc = ExecuteCommand(_hCom, Addr, _CmCode, _PmCode, CmDataLen, CmData,
+        //            ref ReType, ref St0, ref St1, ref St2, ref _ReDataLen, _ReData);
+        //    Console.WriteLine($"rc:{rc}");
+        //    Console.WriteLine("Retype1: {0:X}", ReType);
+        //    Console.WriteLine("St0: {0:X}, St1: {0:X}, St2: {1:X}", St0, St1, St2);
+        //}
         static void Main(string[] args)
         {
             byte[] CmData = new byte[1024];
