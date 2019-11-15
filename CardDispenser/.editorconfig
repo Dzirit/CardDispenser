@@ -1,0 +1,16 @@
+﻿[*.cs]
+
+# CA1303: Не передавать литералы в качестве локализованных параметров
+dotnet_diagnostic.CA1303.severity = none
+
+# CA1031: Не перехватывать исключения общих типов
+dotnet_diagnostic.CA1031.severity = silent
+
+# IDE0040: Добавьте модификаторы доступности
+dotnet_style_require_accessibility_modifiers = for_non_interface_members:silent
+
+# CA1060: Переместите вызовы PInvoke в класс собственных методов
+dotnet_diagnostic.CA1060.severity = silent
+
+# CA2101: Укажите маршалинг для строковых аргументов P/Invoke
+dotnet_diagnostic.CA2101.severity = suggestion
